@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "../../assets/logo_ml.png";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsGift } from "react-icons/bs";
 import { HiOutlineLocationMarker, HiOutlineShoppingCart } from "react-icons/hi";
@@ -31,11 +31,11 @@ const Navbar = () => {
 		<nav className="nav-navbar">
 			<div className="main-container">
 				<div className="navbar-search-container">
-					<img
+					<Link to={'/'}><img
 						className="header-logo"
 						src={logo}
 						alt="Logo de Mercado Libre"
-					/>
+					/></Link>
 					<form className='search-input-container' noValidate autoComplete="off" onSubmit={searchData}>
 						<input className='search-input' type='text' onChange={updateInput} />
 						<button className="search-icon" type='submit'>
