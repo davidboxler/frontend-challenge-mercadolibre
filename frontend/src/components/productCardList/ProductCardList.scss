@@ -1,4 +1,10 @@
 .containerBody {
+  width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+
     & .card-product {
       width: 100%;
       padding: 16px;
@@ -25,6 +31,15 @@
   .icon-envio {
     margin-left: 16px;
   }
+
+  .img-container {
+    width: 25%;
+    text-align: center;
+  }
+
+  .title-container {
+    width: 75%;
+  }
   
   .container-info-product {
     & p.price-text {
@@ -42,8 +57,13 @@
   }
   
   .container-card {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
     padding-bottom: 16px;
     border-bottom: 1px solid #eeeeee;
+    color: black;
   }
   
   .lugar-product {

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './ProductListView.scss';
 import ProductList from '../../components/productList/ProductList';
 import Navbar from '../../components/navbar/Navbar';
 import { Global } from '../../global/global';
 
 export const ProductListView = () => {
-  const [searchValue, setSearchValue] = useState();
+  const searchValue = window.location.href.split('=')[1];
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -13,9 +12,11 @@ export const ProductListView = () => {
   }, [searchValue]);
 
   const getProductsDetails = async () => {
-    setSearchValue(window.location.href.split('=')[1]);
-    const request = await fetch(Global.url + 'items/' + searchValue, {
-      method: "GET"
+    const request = await fetch(Global.url + 'items/search/' + searchValue, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
     });
     const data = await request.json();
     setProducts(data.items);

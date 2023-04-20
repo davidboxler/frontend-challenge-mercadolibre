@@ -1,36 +1,25 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import './ProductCardList.scss';
+import { Link } from 'react-router-dom'
 import logoEnvio from '../../assets/ic_shipping.png'
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
+import './ProductCardList.scss';
 
 export const ProductCard = (props) => {
-
-    const navigate = useNavigate()
-    const sendData = () => {
-        navigate(`/items/${props.id}`)
-    }
-
-    console.log(props)
-
     return (
         <>
-            <Card className="card-product">
-                <Grid
-                    container
-                    className={'container-card'}
-                    onClick={() => sendData()}
+            <section className="card-product">
+                <Link
+                    to={'/items/' + props?.data?.id}
+                    className='container-card'
                 >
-                    <Grid item xs={2}>
-                        <img alt={'imagen de producto'} className={'img-product'} src={props.data.picture} />
-                    </Grid>
-                    <Grid item xs={10}>
-                        <div className={'container-info-product'}>
-                            <div className={'container-price'}>
-                                <p className={'price-text'}>$ {props?.data?.price?.amount}</p>
+                    <div className='img-container'>
+                        <img alt='imagen de producto' className='img-product' src={props.data.picture} />
+                    </div>
+                    <div className='title-container'>
+                        <div className='container-info-product'>
+                            <div className='container-price'>
+                                <p className='price-text'>$ {props?.data?.price?.amount}</p>
                                 {props.data.free_shippin ? (
-                                    <img alt={'logo envio'} src={logoEnvio} className={'icon-envio'} />
+                                    <img alt='logo envio' src={logoEnvio} className='icon-envio' />
                                 ) : null}
                             </div>
                             <div>
@@ -38,12 +27,12 @@ export const ProductCard = (props) => {
                                 <p>{props.data.condition}</p>
                             </div>
                         </div>
-                        <div className={'lugar-product'}>
+                        <div className='lugar-product'>
                             <p>{props.data.location}</p>
                         </div>
-                    </Grid>
-                </Grid>
-            </Card>
+                    </div>
+                </Link>
+            </section>
         </>
     )
 }

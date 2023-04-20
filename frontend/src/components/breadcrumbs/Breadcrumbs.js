@@ -1,27 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { MdKeyboardArrowRight } from "react-icons/md";
-import './Breadcrumbs.scss'
+import './Breadcrumbs.scss';
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = ({ categories }) => {
   return (
     <section className="main-container">
-      <div className="text-interest">
-        <b>Tambien puede interesarte: </b>
-        <span>peluche - peluchestitch</span>
-      </div>
-
       <div className="breadcrumbs-row">
         <section className="breadcrumbs">
-          <p>Volver al listado</p>
-          <nav>
-            <ol className="breadcrumbs-list">
-              <li>Juegos y Juguetes </li><MdKeyboardArrowRight className="breadcrumbs-arrow-right" />
-              <li>Peluches </li><MdKeyboardArrowRight className="breadcrumbs-arrow-right" />
-              <li>Stitch</li>
-            </ol>
-          </nav>
+          <Link className='btn-volver' to={'/'}>Volver</Link>
+          {categories?.map((category) => {
+            return (
+              <>
+                <span className="breadcrumbItem" key={category.id}>
+                  {category.name}
+                </span>
+                <MdKeyboardArrowRight className="breadcrumbs-arrow-right" />
+              </>
+            )
+          })}
         </section>
-
         <ul className="share-or-sell">
           <li>Compartir</li>
           <li>Vender uno igual</li>

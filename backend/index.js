@@ -22,7 +22,7 @@ const originalEndpoints = {
   };
 
 /* GET home page. */
-app.get("/api/items/:query", async (req, res) => {
+app.get("/api/items/search/:query", async (req, res) => {
     const query = req.params.query;
   
     const fetchData = async () => {

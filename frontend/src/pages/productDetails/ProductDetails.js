@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Global } from '../../global/global';
 import { useParams } from 'react-router-dom';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import SellerInfo from '../../components/sellerInfo/SellerInfo';
 import Information from '../../components/information/Information';
 import ProductDescription from '../../components/productDescription/ProductDescription';
@@ -36,13 +36,13 @@ export const ProductDetails = () => {
   return (
     <main>
       <Navbar />
-      <Breadcrumbs />
+      <Breadcrumbs categories={products.categories} />
         {loading && !products ? (
           <section
             container
             className={'container-card-details'}
           >
-            <CircularProgress />
+            <CircularProgressbar />
           </section>
         ) : (
           <section className="main-container product-details-grid bg-white">
