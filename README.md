@@ -40,4 +40,4 @@
 - `$ npm install --save-dev nodemon`
 
 <h1>Funcionamiento</h1>
-<a href=''>Prueba funcionamiento</a>
+<a href='https://github.com/davidboxler/frontend-challenge-mercadolibre/blob/master/frontend/public/prueba-app.gif'>Prueba funcionamiento</a>
