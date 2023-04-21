@@ -29,15 +29,15 @@
 #### FrontEnd 
 
 - `$ npm install --save react-router-dom`
+- `$ npm install sass`
+- `$ npm install react-icons`
+- `$ npm install react-circular-progressbar`
 
 #### BackEnd
 
 - `$ npm install cors`
 - `$ npm install express`
-- `$ npm install mongoose` 
-- `$ npm install multer`
-- `$ npm install validator`
 - `$ npm install --save-dev nodemon`
-- `$ npm install jwt-simple` 
-- `$ npm install mongoose-paginate`
-- `$ npm install bcrypt` 
+
+<h1>Funcionamiento</h1>
+<a href=''>Prueba funcionamiento</a>
